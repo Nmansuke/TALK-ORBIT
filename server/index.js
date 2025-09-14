@@ -35,17 +35,17 @@ app.use("/api/contacts", contactsRoutes);
 app.use("/api/messages", messagesRoutes);
 app.use("/api/channel", channelRoutes);
 
-const __dirname1 = path.resolve();
-if(process.env.NODE_ENV === 'production'){
-app.use(express.static(path.join(__dirname1,'/client/build')));
-app.get('*', (req,res)=>{
-  res.sendFile(path.resolve(__dirname1,"client","dist", "index.html"));
-});
-} else{
-  app.get("/",(req,res)=>{
-    res.send("api is runing");
-  });
-}
+// const __dirname1 = path.resolve();
+// if(process.env.NODE_ENV === 'production'){
+// app.use(express.static(path.join(__dirname1,'/client/build')));
+// app.get('*', (req,res)=>{
+//   res.sendFile(path.resolve(__dirname1,"client","dist", "index.html"));
+// });
+// } else{
+//   app.get("/",(req,res)=>{
+//     res.send("api is runing");
+//   });
+// }
 
 const server = app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
